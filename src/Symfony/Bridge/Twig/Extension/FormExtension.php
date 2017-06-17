@@ -77,7 +77,7 @@ class FormExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'humanize' => new \Twig_Filter_Method($this, 'renderer->humanize'),
+            new \Twig_SimpleFilter('humanize', array($this->renderer, 'humanize'))
         );
     }
 
